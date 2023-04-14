@@ -1,4 +1,3 @@
-# bow
 ## Algorithm
 - Query images from the dataset, giving a score
 - Classify and query images, giving label and scores
