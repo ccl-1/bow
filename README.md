@@ -3,7 +3,7 @@
 - Query images from the dataset, giving a score
 - Classify and query images, giving label and scores
 ## dataset: 
-**for classify**
+**for classification**
 
 -root
 
@@ -20,7 +20,7 @@
        ... <br>
    --test - <br>
 ## How to run?
-**for classify**
+**for classification**
 ```
 python findFeatures.py -t /media/ubuntu/zoro/ubuntu/data/train/00/image_0
 python query.py -i /media/ubuntu/zoro/ubuntu/data/train/00/image_0/000045.png
