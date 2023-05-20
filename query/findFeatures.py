@@ -63,6 +63,7 @@ for i in range(len(image_paths)):
 nbr_occurences = np.sum( (im_features > 0) * 1, axis = 0)
 idf = np.array(np.log((1.0*len(image_paths)+1) / (1.0*nbr_occurences + 1)), 'float32')
 
+
 # Perform L2 normalization
 im_features = im_features * idf
 im_features = preprocessing.normalize(im_features, norm='l2')

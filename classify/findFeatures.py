@@ -7,6 +7,7 @@ from sklearn.svm import LinearSVC
 from sklearn.externals import joblib
 from scipy.cluster.vq import *
 from sklearn.preprocessing import StandardScaler
+from sklearn import preprocessing
 from tqdm import tqdm
 
 # Get the path of the training set
@@ -58,6 +59,10 @@ for i in range(len(image_paths)):
 # Perform Tf-Idf vectorization
 nbr_occurences = np.sum( (im_features > 0) * 1, axis = 0)
 idf = np.array(np.log((1.0*len(image_paths)+1) / (1.0*nbr_occurences + 1)), 'float32')
+
+# Perform L2 normalization
+im_features = im_features * idf
+im_features = preprocessing.normalize(im_features, norm='l2')
 
 # Scaling the words
 stdSlr = StandardScaler().fit(im_features)  # 针对每一个特征维度,计算 均值和方差
